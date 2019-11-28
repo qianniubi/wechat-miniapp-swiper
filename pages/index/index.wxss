@@ -40,7 +40,7 @@
 }
 .fingerView {
   width: 690rpx;
-  height: 790rpx;
+  height: 1000rpx;
   position: absolute;
   top: 0;
   left: 0;
