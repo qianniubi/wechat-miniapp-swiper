@@ -1,0 +1,58 @@
+.homedemo {
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  position: relative;
+}
+.spucard {
+  width: 690rpx;
+  height: 1000rpx;
+  background: #FFFFFF;
+  box-shadow: 0 40rpx 30rpx 0 rgba(0,0,0,0.08);
+  border-radius: 10rpx;
+  position: absolute;
+  top: calc(50% - 500rpx);
+  left: 30rpx;
+  overflow: hidden;
+  transition: 600ms;
+}
+.spucardimg {
+  width: 690rpx;
+  height: 900rpx;
+  display: block;
+}
+.spucardname {
+  width: 690rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.spucard1 {
+  z-index: 3;
+}
+.spucard2 {
+  z-index: 2;
+  transform: scale(0.9) translateY(60rpx);
+}
+.spucard3 {
+  z-index: 1;
+  transform: scale(0.8) translateY(140rpx);
+}
+.fingerView {
+  width: 690rpx;
+  height: 790rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.spucardLeft {
+  left: -950rpx;
+  transform: rotate(-30deg);
+  z-index: 4;
+}
+.spucardRight {
+  left: 950rpx;
+  transform: rotate(30deg);
+  z-index: 4;
+}

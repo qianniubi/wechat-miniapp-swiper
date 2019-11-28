@@ -1,0 +1,40 @@
+
+<view class="homedemo">
+    <block wx:for="{{dataSource}}" wx:key>
+        <view wx:if="{{index > dataSource.length - 5}}" class="spucard" style="{{spucardcss(dataSourceClass[index], subX, startLeft)}}">
+            <view class="fingerView" catchtouchstart="drawStart" catchtouchmove="drawMove" catchtouchend="drawEnd"></view>
+            <image src="{{item.img}}" mode="aspectFill" class="spucardimg" />
+            <view class="spucardname">{{item.name}}--{{index}}</view>
+        </view>
+    </block>
+</view>
+
+
+<wxs module="spucardcss">
+  function spucardcss(type, subX, startLeft) {
+      var strcss = ''
+      if (type == 'spucard1') {
+          var left = startLeft + subX
+          var str = 'z-index: 3; left: ' + left + 'px;transition: 100ms;'
+          if (subX > 0) {
+                str += 'transform: rotate(6deg) translateX(10px);'
+          } else if (subX < 0) {
+                str += 'transform: rotate(-6deg) translateX(-10px);'
+          }
+          return str
+      } else if (type == 'spucard2') {
+          strcss = 'z-index: 2;transform: scale(0.9) translateY(80rpx); left: ' + startLeft + 'px;'
+          return strcss
+      } else if (type == 'spucard3') {
+          strcss = 'z-index: 1;transform: scale(0.8) translateY(180rpx); left: ' + startLeft + 'px;'
+          return strcss
+      } else if (type == 'spucardLeft') {
+          strcss = 'left: -950rpx;transform: rotate(-30deg) translateX(-10px);z-index: 40;'
+          return strcss
+      } else if (type == 'spucardRight') {
+          strcss = 'left: 950rpx;transform: rotate(30deg) translateX(10px);z-index: 40;'
+          return strcss
+      }
+  }
+  module.exports = spucardcss
+</wxs>
